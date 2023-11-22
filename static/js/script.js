@@ -1,10 +1,10 @@
+// static/script.js
+
 function toggleMenu() {
-    var menu = document.getElementById('menu');
-    if (menu.style.right === '-250px' || menu.style.right === '') {
-        menu.style.right = '0';
-        menu.style.display = 'block';
+    var menuContent = document.getElementById('menu');
+    if (menuContent.style.transform === 'translateX(0%)') {
+        menuContent.style.transform = 'translateX(100%)';
     } else {
-        menu.style.right = '-250px';
-        menu.style.display = 'none';
+        menuContent.style.transform = 'translateX(0%)';
     }
 }
