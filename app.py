@@ -16,7 +16,10 @@ def login():
         return redirect('/result')
     return render_template('login.html')
 
-#d
-# dwqdw
+
+
+#dqwdwq
+#dd
+
 if __name__ == '__main__':
     app.run(debug=True)
