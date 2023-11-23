@@ -2,9 +2,9 @@ body{
     background-color: #f2f2f2;
 }
 .top-bar {
-    width: 100%;
+    width: 120%;
     height: 100px;
-    background-color: #c0c0c0;
+    /* background-color: #5B5C62; */
 }
 .top-bar img {
     position: fixed;
@@ -31,6 +31,7 @@ body{
 .main-content {
     margin-top: 100px;
     position: fixed;
+    margin-right: 250px;
 }
 .main-content-left {
     float: left;
@@ -45,24 +46,40 @@ body{
 }
 #menu {
     position: fixed;
-    top: 110px;
+    border-radius: 30px 0 0 10px / 30px 0 0 10px;
+    top: 105px;
     width: 250px;
     height: 100%;
     right: 0; /* 이게 중요 */
-    background-color: #f8f8f8;
+    background-color: #73757a;
     overflow-x: hidden;
     transition: transform 0.3s ease-in-out;
     transform: translateX(100%);
-    padding-top: 60px; 
     z-index: 1000;
 }
 #menu ul {
     list-style: none;
     padding: 0;
 }
+#Menu-top {
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
 #menu li {
     padding: 15px;
-    border-bottom: 1px solid #ddd;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+}
+#Menu {
+    float: left;
+    margin-left: 30px;
+}
+#Menu-text {
+    margin-top: -7px;
+    margin-right: 90px;
+    color: white;
+    font-size: 30px;
+    float: right;
 }
 #menu-button {
     cursor: pointer;

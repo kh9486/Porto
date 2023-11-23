@@ -6,3 +6,4 @@ function toggleMenu() {
         menu.style.transform = 'translateX(0%)';
     }
 }
+
