@@ -84,5 +84,35 @@ body{
 #menu-button {
     cursor: pointer;
 }
+#Menu1{
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+#Menu1-img {
+    float: left;
+    margin-left: 10px;
+}
+#Menu1-text {
+    margin-top: 1px;
+    margin-right: 90px;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+#Menu2{
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+#Menu2-img {
+    float: left;
+    margin-left: 5px;
+}
+#Menu2-text {
+    margin-top: 1px;
+    margin-right: 70px;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
 
 
