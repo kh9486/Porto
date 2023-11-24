@@ -9,11 +9,11 @@ body{
 #logo-small {
     position: relative;
     top: 30px;
-    left: 36px;
+    left: -450px;
 }
 .login-wrapper{
-    top: 111px;
-    left: 114px;
+    top: 160px;
+    left: 140px;
     position: relative;
     width: 500px;
     height: 701px;
@@ -21,6 +21,7 @@ body{
     box-sizing: border-box;
     border: 2px solid #dbcfcf;
     border-radius: 30px / 30px;
+    float: left;
 }
 #welcome {
     font-size: 20px;
@@ -84,4 +85,11 @@ body{
     /* background-image: url("checkbox-active.png"); */
     background-repeat: no-repeat;
     background-size: contain;
+}
+.login-people {
+    position: fixed;
+    float: right;
+    overflow: hidden;
+    margin-left: 800px;
+    margin-top: 100px;
 }
