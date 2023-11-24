@@ -114,5 +114,19 @@ body{
     font-size: 20px;
     float: right;
 }
+#Menu3{
+    margin-top: 500px;
+}
+#Menu3-img {
+    float: left;
+    margin-left: 16px;
+}
+#Menu3-text {
+    margin-top: 3px;
+    margin-right: 117px;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
 
 
