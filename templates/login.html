@@ -19,10 +19,11 @@
             <h3 id="userPassword">Password</h3>
             <input type="password" name="userPassword" placeholder="Enter your password">
             <label for="remember-check">
-                <input type="checkbox" id="remember-check">아이디 저장하기
+                <input type="checkbox" id="remember-check"> Remember ID
             </label>
             <input type="submit" value="Login">
         </form>
+        <p id="login_bottom_text">Don't you have an Account? <a id="bold-text" href={{ url_for('register') }}>Register</a></p>
     </div>
     <div class="login-people">
         <img src={{ url_for('static', filename='img/login-people.png') }} alt="">

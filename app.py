@@ -36,6 +36,24 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        id = request.form['userName']
+        password = request.form['userPassword']
+        if id in id_pass:
+            return """
+                <script>
+                alert("이미 존재하는 아이디입니다.")
+                history.back()
+                </script>
+                """
+        else:
+            id_pass[id] = password
+            return redirect('/login')
+    return render_template('register.html')
+
+
 @app.route('/resume', methods=['GET', 'POST'])
 def resume():
     if request.method == 'POST':

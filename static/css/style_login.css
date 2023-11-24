@@ -24,9 +24,9 @@ body{
     float: left;
 }
 #welcome {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 #porto {
     font-size: 15px;
@@ -54,7 +54,7 @@ body{
     height: 48px;
     padding: 0 10px;
     box-sizing: border-box;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
     border-radius: 6px;
     background-color: #ffffff;
     border: 1px solid #ababab;
@@ -66,7 +66,7 @@ body{
     color: #fff;
     font-size: 16px;
     background-color: #000000;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 #login-form > input[type="checkbox"]{
     display: none;
@@ -85,6 +85,18 @@ body{
     /* background-image: url("checkbox-active.png"); */
     background-repeat: no-repeat;
     background-size: contain;
+}
+#login_bottom_text {
+    font-weight: 100;
+    color: #a0a0a0;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+#bold-text { 
+    margin-left: 10px;
+    font-weight: 1000;
+    color: #000000;
+    text-decoration-line: none;
 }
 .login-people {
     position: fixed;
