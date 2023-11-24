@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style_resume.css') }}>
+    <title>Porto</title>
+</head>
+<body>
+    <div class="top-bar_resume">
+        <form method="POST" action="/">
+            <a href={{ url_for('index') }}>
+                <img class="porto_logo_small" src={ url_for('static', filename='img/porto_logo_small.png') }} alt="">
+            </a>
+        </form>       
+        <img id="menu-button_resume" src={{ url_for('static', filename='img/fi-br-menu-dots.png') }} alt="" onclick="toggleMenu()">
+        <form method="POST" action="/">
+            <a href={{ url_for('login') }}>
+                <img class="login_resume" src={{ url_for('static', filename='img/account_circle.png') }} alt="">
+            </a>
+        </form>
+    </div>
+</body>
+</html>
