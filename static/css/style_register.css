@@ -31,7 +31,7 @@ body{
 #porto {
     font-size: 15px;
     font-weight: 600;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 #userName {
     font-size: 15px;
@@ -39,6 +39,11 @@ body{
     margin-bottom: 15px;
 }
 #userPassword {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+#comfirmPassword {
     font-size: 15px;
     font-weight: 400;
     margin-bottom: 15px;
@@ -67,32 +72,16 @@ body{
     font-size: 16px;
     font-weight: 700;
     background-color: #000000;
-    margin-top: 50px;
+    margin-top: 10px;
     cursor: pointer;
-}
-#login-form > input[type="checkbox"]{
-    display: none;
 }
 #login-form > label{
     color: #999999;
 }
-#login-form input[type="checkbox"] + label{
-    cursor: pointer;
-    padding-left: 26px;
-    /* background-image: url("checkbox.png"); */
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-#login-form input[type="checkbox"]:checked + label{
-    /* background-image: url("checkbox-active.png"); */
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 #login_bottom_text {
     font-weight: 100;
     color: #a0a0a0;
-    margin-left: 60px;
-    margin-top: 20px;
+    margin-left: 80px;
 }
 #bold-text { 
     margin-left: 10px;

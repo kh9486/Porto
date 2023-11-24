@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href={{ url_for('static', filename='css/style_register.css') }}>
-    <title>Register</title>
+    <title>Login</title>
 </head>
 <body> 
-    hello
+    <a href= {{ url_for('index') }}>
+        <img id="logo-small" src={{ url_for('static', filename='img/porto_logo_small.png') }} alt="">
+    </a>
+    <div class="login-wrapper">
+        <h3 id="welcome">Welcome!</h3>
+        <h2>Sign up to</h2>
+        <h3 id="porto">Our Website "Porto" Simply</h3>
+        <form method="post" action="/login" id="login-form">
+            <h3 id="userName">User name</h3>
+            <input type="text" name="userName" placeholder="Enter your user name">
+            <h3 id="userPassword">Password</h3>
+            <input type="password" name="userPassword" placeholder="Enter your password">
+            <h3 id="comfirmPassword">Confirm Password</h3>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password">
+            <input type="submit" value="Register">
+        </form>
+        <p id="login_bottom_text">Already have an Account? <a id="bold-text" href={{ url_for('login') }}>Login</a></p>
+    </div>
+    <div class="login-people">
+        <img src={{ url_for('static', filename='img/login-people.png') }} alt="">
+    </div>
 </body>
 </html>
