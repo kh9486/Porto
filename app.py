@@ -36,6 +36,13 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/resume', methods=['GET', 'POST'])
+def resume():
+    if request.method == 'POST':
+        return redirect('/result')
+    return render_template('resume.html')
+
+
 
 if __name__ == '__main__':
     app.run()
