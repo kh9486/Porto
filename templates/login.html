@@ -5,8 +5,10 @@
     <link rel="stylesheet" href={{ url_for('static', filename='css/style_login.css') }}>
     <title>Login</title>
 </head>
-<body>
-    <img id="logo-small" src={{ url_for('static', filename='img/porto_logo_small.png') }} alt="">
+<body> 
+    <a href= {{ url_for('index') }}>
+        <img id="logo-small" src={{ url_for('static', filename='img/porto_logo_small.png') }} alt="">
+    </a>
     <div class="login-wrapper">
         <h3 id="welcome">Welcome!</h3>
         <h2>Sign in to</h2>
