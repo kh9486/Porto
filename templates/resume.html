@@ -39,25 +39,35 @@
             </li>
         </ul>
     </div>
+
     <section class="mainContent">
-        <h4>Details</h4>
-        <label for="username">Name:</label>
-        <input type="text" id="username" name="username"><br>
-        <label for="username">Adress:</label>
-        <input type="text" id="username" name="username"><br>
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-xxxx-xxxx"><br>
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email"><br>
+        <h3><strong>Details</strong></h3>
+        <label for="username">Name: </label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="username">Adress: </label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="phone">Phone: </label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-xxxx-xxxx"><br><br>
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" name="email"><br><br>
+        <hr>
 
 
-        <h4>Links</h4>
+        <h3><strong>Links</strong></h3>
+
+        <label for="Github">Github: </label>
+        <input type="url" name="Github_url" placeholder="github.com/">
+        <br><br>
+
+        <label for="Github">Other: </label>
+        <input type="url" name="other_url" placeholder=""><br><br>
+        <hr>
 
 
 
-        <h4>Skills</h4>
+        <h3><strong>Skills</strong></h3>
 
-        <label for="SKILL1">SKILL1:</label>
+        <label for="SKILL1">SKILL1: </label>
         <input type="text" id="SKILL1" name="SKILL1">
         <select id="skill_1" name="skill_1">
            <option value="skill_1_0%">0%</option>
@@ -66,9 +76,10 @@
            <option value="skill_1_60%">60%</option>
            <option value="skill_1_80%">80%</option>
            <option value="skill_1_100%">100%</option><br>
-        </select>
+        </select><br><br>
+    
 
-        <label for="SKILL2">SKILL2:</label>
+        <label for="SKILL2">SKILL2: </label>
         <input type="text" id="SKILL2" name="SKILL2">
         <select id="skill_2" name="skill_2">
            <option value="skill_2_0%">0%</option>
@@ -78,6 +89,71 @@
            <option value="skill_2_80%">80%</option>
            <option value="skill_2_100%">100%</option>
         </select>   
+        <br><br>
+
+        <label for="SKILL3">SKILL3: </label>
+        <input type="text" id="SKILL3" name="SKILL3">
+        <select id="skill_3" name="skill_3">
+           <option value="skill_3_0%">0%</option>
+           <option value="skill_3_20%">20%</option>
+           <option value="skill_3_40%">40%</option>
+           <option value="skill_3_60%">60%</option>
+           <option value="skill_3_80%">80%</option>
+           <option value="skill_3_100%">100%</option><br>
+        </select>
+        <br><br>
+
+        <label for="SKILL4">SKILL4: </label>
+        <input type="text" id="SKILL4" name="SKILL4">
+        <select id="skill_4" name="skill_4">
+           <option value="skill_4_0%">0%</option>
+           <option value="skill_4_20%">20%</option>
+           <option value="skill_4_40%">40%</option>
+           <option value="skill_4_60%">60%</option>
+           <option value="skill_4_80%">80%</option>
+           <option value="skill_4_100%">100%</option><br>
+        </select>
+        <br><br>
+        <hr>
+
+        <h3><strong>Experience</strong></h3>
+        <label for="Experience_main">1. </label>
+        <input type="text" id="Experience_main_1" name="Experience_main">
+        <br><br>
+        
+        <label for="Experience_details">Details: </label><br>
+        <textarea type="text" class="Experience_details" name="Experience_details" oninput="resizeTextarea()"></textarea>
+        <script src="script.js"></script>
+        <br><br>
+
+        <label for="Experience_main">2. </label>
+        <input type="text" id="Experience_main_2" name="Experience_main">
+        <br><br>
+        
+        <label for="Experience_details">Details: </label><br>
+        <textarea type="text" class="Experience_details" name="Experience_details" oninput="resizeTextarea()"></textarea>
+        <script src="script.js"></script>
+        <br><br>
+
+        <label for="Experience_main">3. </label>
+        <input type="text" id="Experience_main_3" name="Experience_main">
+        <br><br>
+        
+        <label for="Experience_details">Details: </label><br>
+        <textarea type="text" class="Experience_details" name="Experience_details" oninput="resizeTextarea()"></textarea>
+        <script src="script.js"></script>
+
+        <br><br>
+        <hr>
+
+        <form action="/submit" method="post">
+            <!-- 여러분의 폼 요소들이나 내용을 추가한 후 -->
+          
+            <button type="submit">Submit</button>
+        </form>
+
+
+        
      
   
 

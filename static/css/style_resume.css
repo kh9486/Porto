@@ -32,6 +32,7 @@ body{
   }
 }
 section {
+    text-align: center;
     width: 20%;
     height: 100%;
     left: 50%;
@@ -42,6 +43,11 @@ section {
     display: block; /* 블록 수준 요소로 설정 */
 }
 
+.Experience_details {
+    resize: vertical; /* 수직 크기 조절 허용 */
+    width: 300px; /* 기본 너비 */
+    height: 100px; /* 기본 높이 */
+}
 
 #menu {
     position: fixed;
