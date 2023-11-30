@@ -40,14 +40,21 @@
         </ul>
     </div>
 
+
+    <form action="/submit" method="POST">
+
     <section class="mainContent">
         <h3><strong>Details</strong></h3>
+
         <label for="username">Name: </label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="username">Adress: </label>
-        <input type="text" id="username" name="username"><br><br>
+        <input type="text" id="username" name="username" value=""><br><br>
+
+        <label for="address">Address: </label>
+        <input type="text" id="address" name="address"><br><br>
+
         <label for="phone">Phone: </label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-xxxx-xxxx"><br><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-XXXX-XXXX"><br><br>
+        
         <label for="email">E-mail: </label>
         <input type="email" id="email" name="email"><br><br>
         <hr>
@@ -55,12 +62,12 @@
 
         <h3><strong>Links</strong></h3>
 
-        <label for="Github">Github: </label>
+        <label for="Github_url">Github: </label>
         <input type="url" name="Github_url" placeholder="github.com/">
         <br><br>
 
-        <label for="Github">Other: </label>
-        <input type="url" name="other_url" placeholder=""><br><br>
+        <label for="other_url">Other: </label>
+        <input type="url" name="other_url" placeholder="other.com/"><br><br>
         <hr>
 
 
@@ -117,47 +124,41 @@
         <hr>
 
         <h3><strong>Experience</strong></h3>
-        <label for="Experience_main">1. </label>
-        <input type="text" id="Experience_main_1" name="Experience_main">
+        <label for="Experience_main_1">1. </label>
+        <input type="text" id="Experience_main_1" name="Experience_main_1">
         <br><br>
         
-        <label for="Experience_details">Details: </label><br>
-        <textarea type="text" class="Experience_details" name="Experience_details" oninput="resizeTextarea()"></textarea>
+        <label for="Experience_details_1">Details: </label><br>
+        <textarea type="text" class="Experience_details_1" name="Experience_details_1" oninput="resizeTextarea()"></textarea>
         <script src="script.js"></script>
         <br><br>
 
-        <label for="Experience_main">2. </label>
-        <input type="text" id="Experience_main_2" name="Experience_main">
+        <label for="Experience_main_2">2. </label>
+        <input type="text" id="Experience_main_2" name="Experience_main_2">
         <br><br>
         
-        <label for="Experience_details">Details: </label><br>
-        <textarea type="text" class="Experience_details" name="Experience_details" oninput="resizeTextarea()"></textarea>
+        <label for="Experience_details_2">Details: </label><br>
+        <textarea type="text" class="Experience_details_2" name="Experience_details_2" oninput="resizeTextarea()"></textarea>
         <script src="script.js"></script>
         <br><br>
 
-        <label for="Experience_main">3. </label>
-        <input type="text" id="Experience_main_3" name="Experience_main">
+        <label for="Experience_main_3">3. </label>
+        <input type="text" id="Experience_main_3" name="Experience_main_3">
         <br><br>
         
-        <label for="Experience_details">Details: </label><br>
-        <textarea type="text" class="Experience_details" name="Experience_details" oninput="resizeTextarea()"></textarea>
+        <label for="Experience_details_3">Details: </label><br>
+        <textarea type="text" class="Experience_details_3" name="Experience_details_3" oninput="resizeTextarea()"></textarea>
         <script src="script.js"></script>
 
         <br><br>
         <hr>
-
-        <form action="/submit" method="post">
-            <!-- 여러분의 폼 요소들이나 내용을 추가한 후 -->
-          
-            <button type="submit">Submit</button>
-        </form>
-
-
-        
-     
   
+        <input type="submit" value="Save" />
+          
+
 
     </section>
+    </form>
     
 <script src={{ url_for('static', filename='js/script.js') }}></script>
 </body>

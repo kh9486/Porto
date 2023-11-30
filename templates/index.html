@@ -22,8 +22,11 @@
         </ul>
         <ul>
             <li id="Menu1">
-                <img id="Menu1-img" src = {{ url_for('static', filename='img/User_Shield.png') }} alt="">
-                <h1 id="Menu1-text">내 정보</h1>
+                <a href="{{ url_for('resume') }}">
+                    <img id="Menu1-img" src="{{ url_for('static', filename='img/User_Shield.png') }}" alt="">
+                    <h1 id="Menu1-text">내 정보</h1>
+                </a>
+            </li>
             </li>
             <li id="Menu2">
                 <img id="Menu2-img" src = {{ url_for('static', filename='img/document.png') }} alt="">
