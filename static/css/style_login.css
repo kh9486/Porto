@@ -10,6 +10,7 @@ body{
     position: relative;
     top: 30px;
     left: -450px;
+    height: 70px;
 }
 .login-wrapper{
     top: 160px;
