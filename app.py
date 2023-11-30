@@ -4,6 +4,8 @@ app = Flask(__name__)
 
 id_pass = {"admin": "admin"}
 
+# 정아야 내가 정말정말 사랑해❤
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
