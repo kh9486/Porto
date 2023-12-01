@@ -16,11 +16,6 @@ dynamodb = boto3.resource('dynamodb', aws_access_key_id=aws_access_key_id, aws_s
 table = dynamodb.Table('porto_submit')
 
 
-
-
-
-# 정아야 내가 정말정말 사랑해❤
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
