@@ -1,11 +1,12 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session, url_for
 import boto3
 from boto3.dynamodb.conditions import Key
 
 
 app = Flask(__name__)
+# app.secret_key = '0000'
 
-id_pass = {"admin": "admin"}
+# id_pass = {"admin": "admin"}
 
 aws_access_key_id = 'AKIAWYYZB6Q2Z27JIOKV'
 aws_secret_access_key = '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'
@@ -16,8 +17,12 @@ dynamodb = boto3.resource('dynamodb', aws_access_key_id=aws_access_key_id, aws_s
 table = dynamodb.Table('porto_submit')
 
 
+def check_if_username_exists(username):
+    response = table.query(KeyConditionExpression=Key('username').eq(username))
+    return response.get('Items', [])
 
-
+# def is_user_logged_in():
+#     return 'username' in session
 
 # 정아야 내가 정말정말 사랑해❤
 
@@ -28,13 +33,46 @@ def index():
     return render_template('index.html')
 
 
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         id = request.form['userName']
+#         password = request.form['userPassword']
+#         if id in id_pass:
+#             if id_pass[id] == password:
+#                 return redirect("/")
+#             else:
+#                 return """
+#                     <script>
+#                     alert("로그인 실패, 비밀번호가 틀렸습니다.")
+#                     history.back()
+#                     </script>
+#                     """
+#         else:
+#             return """
+#                 <script>
+#                 alert("로그인 실패, 다시 입력하세요.")
+#                 history.back()
+#                 </script>
+#                 """
+#     return render_template('login.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    # if is_user_logged_in():
+    #     return redirect("resume")
+    
     if request.method == 'POST':
-        id = request.form['userName']
+        id = request.form['username']
         password = request.form['userPassword']
-        if id in id_pass:
-            if id_pass[id] == password:
+        user_data_list = check_if_username_exists(id)
+
+        if user_data_list:
+            user_data = user_data_list[0]
+            # 사용자명이 존재하면 비밀번호를 확인합니다.
+            if user_data.get('password') == password:
+                # 로그인 성공 시 세션에 사용자명을 저장합니다.
+                session['username'] = id
                 return redirect("/")
             else:
                 return """
@@ -46,31 +84,45 @@ def login():
         else:
             return """
                 <script>
-                alert("로그인 실패, 다시 입력하세요.")
+                alert("로그인 실패, 사용자명이 존재하지 않습니다.")
                 history.back()
                 </script>
+        
                 """
+        
     return render_template('login.html')
+        
+# @app.route('/logout')
+# def logout():
+#     session.pop('username', None)
+#     return redirect('login')
 
 
 @app.route('/register', methods=['GET', 'POST'])
+
 def register():
     if request.method == 'POST':
         id = request.form['userName']
         password = request.form['userPassword']
-        if id in id_pass:
+        existing_users = check_if_username_exists(id)
+
+        if existing_users:
             return """
                 <script>
-                alert("이미 존재하는 아이디입니다.")
-                history.back()
+                alert("이미 존재하는 아이디입니다.");
+                history.back();
                 </script>
                 """
         else:
-            id_pass[id] = password
-            return redirect('/login')
+            table.put_item(Item={'username': id, 'password': password})
+            return """
+                <script>
+                alert("회원가입이 완료되었습니다. 다시 로그인해 주십시오.");
+                history.back();
+                </script>
+                """
+        
     return render_template('register.html')
-
-
 
 
 
@@ -87,7 +139,7 @@ def resume():
 
 @app.route('/submit', methods=['GET','POST'])
 def submit():
-        username = request.form['username']
+        name = request.form['name']
         address = request.form['address']
         phone = request.form['phone']
         email = request.form['email']
@@ -111,7 +163,7 @@ def submit():
 
         table.put_item(
             Item={
-            'username': username,
+            'name': name,
             'address': address,
             'phone': phone,
             'email': email,
@@ -136,7 +188,7 @@ def submit():
 
 
         return render_template('submit.html',
-        username=username,
+        name = name,
         address=address,
         phone = phone,
         email = email,

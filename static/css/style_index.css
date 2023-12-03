@@ -18,6 +18,7 @@ body{
     right: 60px;
     top: 49px;
 }
+
 @media (max-width: 1000px) {
   .top-bar img {
     display: none;
