@@ -18,6 +18,12 @@ body{
     right: 60px;
     top: 49px;
 }
+.top-bar img.logout {
+    width: 30px;
+    height: 30px;
+    right: 60px;
+    top: 49px;
+}
 
 @media (max-width: 1000px) {
   .top-bar img {
