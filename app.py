@@ -66,18 +66,11 @@ def register():
     return render_template('register.html')
 
 
-
-
-
-
 @app.route('/resume', methods=['GET', 'POST'])
 def resume():
     if request.method == 'POST':
         return redirect('/resume')
     return render_template('resume.html')
-
-
-
 
 
 @app.route('/submit', methods=['GET','POST'])
