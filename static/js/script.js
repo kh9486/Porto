@@ -19,3 +19,5 @@ function resizeTextarea() {
       textarea.style.height = (textarea.scrollHeight) + "px";
     }
   }
+  window.onload = resizeTextarea;
+
