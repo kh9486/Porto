@@ -14,7 +14,10 @@ aws_secret_access_key = 'g5a/lw/0TQ2PH2unMxTBYZQKcssyS31qC099KDsA'
 region_name = 'us-west-2'
 dynamodb_table_name = 'porto_submit'
 
-dynamodb = boto3.resource('dynamodb', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, region_name=region_name)
+dynamodb = boto3.resource('dynamodb', aws_access_key_id=aws_access_key_id, 
+                          aws_secret_access_key=aws_secret_access_key, 
+                          region_name=region_name)
+
 table = dynamodb.Table('porto_submit')
 
 
@@ -26,8 +29,6 @@ def check_if_username_exists(username):
 def is_user_logged_in():
     return 'username' in session
 
-
-# 정아야 내가 정말정말 사랑해❤
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
