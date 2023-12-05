@@ -109,69 +109,37 @@ def register():
 
 
 
-
-
 @app.route('/resume', methods=['GET', 'POST'])
 def resume():
-    if request.method == 'POST':
-        return redirect('/resume')
-    return render_template('resume.html')
+    if not is_user_logged_in():
+        return redirect(url_for('login'))
+    
+    else: 
+        username = session.get('username')
+        response = table.query(KeyConditionExpression=Key('username').eq(username))
+        items=response["Items"][0]
 
+        name = items['name'] if 'name' in items else ''
+        address = items['address'] if 'address' in items else ''
+        phone = items['phone'] if 'phone' in items else ''
+        email = items['email'] if 'email' in items else ''
+        Github_url = items['Github_url'] if 'Github_url' in items else ''
+        other_url = items['other_url'] if 'other_url' in items else ''
+        SKILL1 = items['SKILL1'] if 'SKILL1' in items else ''
+        skill_1 = items['skill_1'] if 'skill_1' in items else ''
+        SKILL2 = items['SKILL2'] if 'SKILL2' in items else ''
+        skill_2 = items['skill_2'] if 'skill_2' in items else ''
+        SKILL3 = items['SKILL3'] if 'SKILL3' in items else ''
+        skill_3 = items['skill_3'] if 'skill_3' in items else ''
+        SKILL4 = items['SKILL4'] if 'SKILL4' in items else ''
+        skill_4 = items['skill_4'] if 'skill_4' in items else ''
+        Experience_main_1 = items['Experience_main_1'] if 'Experience_main_1' in items else ''
+        Experience_details_1 = items['Experience_details_1'] if 'Experience_details_1' in items else ''
+        Experience_main_2 = items['Experience_main_2'] if 'Experience_main_2' in items else ''
+        Experience_details_2 = items['Experience_details_2'] if 'Experience_details_2' in items else ''
+        Experience_main_3 = items['Experience_main_3'] if 'Experience_main_3' in items else ''
+        Experience_details_3 = items['Experience_details_3'] if 'Experience_details_3' in items else ''
 
-
-
-
-@app.route('/submit', methods=['GET','POST'])
-def submit():
-        name = request.form['name']
-        address = request.form['address']
-        phone = request.form['phone']
-        email = request.form['email']
-        Github_url = request.form['Github_url']
-        other_url = request.form['other_url']
-        SKILL1 = request.form['SKILL1']
-        skill_1 = request.form['skill_1']
-        SKILL2 = request.form['SKILL2']
-        skill_2 = request.form['skill_2']
-        SKILL3 = request.form['SKILL3']
-        skill_3 = request.form['skill_3']
-        SKILL4 = request.form['SKILL4']
-        skill_4 = request.form['skill_4']
-        Experience_main_1 = request.form['Experience_main_1']
-        Experience_details_1 = request.form['Experience_details_1']
-        Experience_main_2 = request.form['Experience_main_2']
-        Experience_details_2 = request.form['Experience_details_2']
-        Experience_main_3 = request.form['Experience_main_3']
-        Experience_details_3 = request.form['Experience_details_3']
-
-
-        table.put_item(
-            Item={
-            'name': name,
-            'address': address,
-            'phone': phone,
-            'email': email,
-            'Github_url': Github_url,
-            'other_url': other_url,
-            'SKILL1': SKILL1,
-            'skill_1': skill_1,
-            'SKILL2': SKILL2,
-            'skill_2': skill_2,
-            'SKILL3': SKILL3,
-            'skill_3': skill_3,
-            'SKILL4': SKILL4,
-            'skill_4': skill_4,
-            'Experience_main_1': Experience_main_1,
-            'Experience_details_1': Experience_details_1,
-            'Experience_main_2': Experience_main_2,
-            'Experience_details_2': Experience_details_2,
-            'Experience_main_3': Experience_main_3,
-            'Experience_details_3': Experience_details_3
-                    }
-                        )
-
-
-        return render_template('submit.html',
         return render_template('resume.html',
         name = name,
         address=address,
@@ -280,10 +248,6 @@ def submit():
 
 
 
-
-
-
 if __name__ == '__main__':
     app.run(debug="True")
-
 
