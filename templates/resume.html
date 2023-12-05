@@ -12,9 +12,12 @@
         </a>
 
         <img id="menu-button" src={{ url_for('static', filename='img/fi-br-menu-dots.png') }} alt="" onclick="toggleMenu()">
-
-        <a href={{ url_for('login') }}>
-            <img class="login_resume" src={{ url_for('static', filename='img/account_circle.png') }} alt="">
+        <a href= "{% if 'username' in session %}{{ url_for('logout') }}{% else %}{{ url_for('login') }}{% endif %}">
+            {% if 'username' in session %}
+                <img class="logout" src={{ url_for('static', filename='img/logout.png') }} alt="">
+            {% else %}
+                <img class="login" src={{ url_for('static', filename='img/account_circle.png') }} alt="">
+            {% endif %}
         </a>
 
     </header>
@@ -26,8 +29,10 @@
         </ul>
         <ul>
             <li id="Menu1">
-                <img id="Menu1-img" src = {{ url_for('static', filename='img/User_Shield.png') }} alt="">
-                <h1 id="Menu1-text">내 정보</h1>
+                <a href="{{ url_for('resume') }}">
+                    <img id="Menu1-img" src="{{ url_for('static', filename='img/User_Shield.png') }}" alt="">
+                    <h1 id="Menu1-text">내 정보</h1>
+                </a>
             </li>
             <li id="Menu2">
                 <img id="Menu2-img" src = {{ url_for('static', filename='img/document.png') }} alt="">
@@ -47,107 +52,104 @@
         <h3><strong>Details</strong></h3>
 
         <label for="name">Name: </label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" value="{{name}}"><br><br>
 
         <label for="address">Address: </label>
-        <input type="text" id="address" name="address"><br><br>
+        <input type="text" id="address" name="address" value="{{address}}"><br><br>
 
         <label for="phone">Phone: </label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-XXXX-XXXX"><br><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-XXXX-XXXX" value="{{phone}}"><br><br>
         
         <label for="email">E-mail: </label>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email" value="{{email}}"><br><br>
         <hr>
 
 
         <h3><strong>Links</strong></h3>
 
         <label for="Github_url">Github: </label>
-        <input type="url" name="Github_url" placeholder="github.com/">
+        <input type="url" name="Github_url" placeholder="github.com/" value="{{Github_url}}">
         <br><br>
 
         <label for="other_url">Other: </label>
-        <input type="url" name="other_url" placeholder="other.com/"><br><br>
+        <input type="url" name="other_url" placeholder="other.com/" value="{{other_url}}"><br><br>
         <hr>
 
 
 
         <h3><strong>Skills</strong></h3>
 
+
         <label for="SKILL1">SKILL1: </label>
-        <input type="text" id="SKILL1" name="SKILL1">
+        <input type="text" id="SKILL1" name="SKILL1" value="{{ SKILL1 }}">
         <select id="skill_1" name="skill_1">
-           <option value="skill_1_0%">0%</option>
-           <option value="skill_1_20%">20%</option>
-           <option value="skill_1_40%">40%</option>
-           <option value="skill_1_60%">60%</option>
-           <option value="skill_1_80%">80%</option>
-           <option value="skill_1_100%">100%</option><br>
+            <option value="skill_1_0%" {% if skill_1 == 'skill_1_0%' %}selected{% endif %}>0%</option>
+            <option value="skill_1_20%" {% if skill_1 == 'skill_1_20%' %}selected{% endif %}>20%</option>
+            <option value="skill_1_40%" {% if skill_1 == 'skill_1_40%' %}selected{% endif %}>40%</option>
+            <option value="skill_1_60%" {% if skill_1 == 'skill_1_60%' %}selected{% endif %}>60%</option>
+            <option value="skill_1_80%" {% if skill_1 == 'skill_1_80%' %}selected{% endif %}>80%</option>
+            <option value="skill_1_100%" {% if skill_1 == 'skill_1_100%' %}selected{% endif %}>100%</option>
         </select><br><br>
-    
 
         <label for="SKILL2">SKILL2: </label>
-        <input type="text" id="SKILL2" name="SKILL2">
+        <input type="text" id="SKILL2" name="SKILL2" value="{{ SKILL2 }}">
         <select id="skill_2" name="skill_2">
-           <option value="skill_2_0%">0%</option>
-           <option value="skill_2_20%">20%</option>
-           <option value="skill_2_40%">40%</option>
-           <option value="skill_2_60%">60%</option>
-           <option value="skill_2_80%">80%</option>
-           <option value="skill_2_100%">100%</option>
-        </select>   
-        <br><br>
+            <option value="skill_2_0%" {% if skill_2 == 'skill_2_0%' %}selected{% endif %}>0%</option>
+            <option value="skill_2_20%" {% if skill_2 == 'skill_2_20%' %}selected{% endif %}>20%</option>
+            <option value="skill_2_40%" {% if skill_2 == 'skill_2_40%' %}selected{% endif %}>40%</option>
+            <option value="skill_2_60%" {% if skill_2 == 'skill_2_60%' %}selected{% endif %}>60%</option>
+            <option value="skill_2_80%" {% if skill_2 == 'skill_2_80%' %}selected{% endif %}>80%</option>
+            <option value="skill_2_100%" {% if skill_2 == 'skill_2_100%' %}selected{% endif %}>100%</option>
+        </select><br><br>
 
         <label for="SKILL3">SKILL3: </label>
-        <input type="text" id="SKILL3" name="SKILL3">
+        <input type="text" id="SKILL3" name="SKILL3" value="{{ SKILL3 }}">
         <select id="skill_3" name="skill_3">
-           <option value="skill_3_0%">0%</option>
-           <option value="skill_3_20%">20%</option>
-           <option value="skill_3_40%">40%</option>
-           <option value="skill_3_60%">60%</option>
-           <option value="skill_3_80%">80%</option>
-           <option value="skill_3_100%">100%</option><br>
-        </select>
-        <br><br>
+            <option value="skill_3_0%" {% if skill_3 == 'skill_3_0%' %}selected{% endif %}>0%</option>
+            <option value="skill_3_20%" {% if skill_3 == 'skill_3_20%' %}selected{% endif %}>20%</option>
+            <option value="skill_3_40%" {% if skill_3 == 'skill_3_40%' %}selected{% endif %}>40%</option>
+            <option value="skill_3_60%" {% if skill_3 == 'skill_3_60%' %}selected{% endif %}>60%</option>
+            <option value="skill_3_80%" {% if skill_3 == 'skill_3_80%' %}selected{% endif %}>80%</option>
+            <option value="skill_3_100%" {% if skill_3 == 'skill_3_100%' %}selected{% endif %}>100%</option>
+        </select><br><br>
 
         <label for="SKILL4">SKILL4: </label>
-        <input type="text" id="SKILL4" name="SKILL4">
+        <input type="text" id="SKILL4" name="SKILL4" value="{{ SKILL4 }}">
         <select id="skill_4" name="skill_4">
-           <option value="skill_4_0%">0%</option>
-           <option value="skill_4_20%">20%</option>
-           <option value="skill_4_40%">40%</option>
-           <option value="skill_4_60%">60%</option>
-           <option value="skill_4_80%">80%</option>
-           <option value="skill_4_100%">100%</option><br>
-        </select>
-        <br><br>
-        <hr>
+            <option value="skill_4_0%" {% if skill_4 == 'skill_4_0%' %}selected{% endif %}>0%</option>
+            <option value="skill_4_20%" {% if skill_4 == 'skill_4_20%' %}selected{% endif %}>20%</option>
+            <option value="skill_4_40%" {% if skill_4 == 'skill_4_40%' %}selected{% endif %}>40%</option>
+            <option value="skill_4_60%" {% if skill_4 == 'skill_4_60' %}selected{% endif %}>60%</option>
+            <option value="skill_3_80%" {% if skill_4 == 'skill_4_80%' %}selected{% endif %}>80%</option>
+            <option value="skill_3_100%" {% if skill_4 == 'skill_4_100%' %}selected{% endif %}>100%</option>
+        </select><br><br>
+
 
         <h3><strong>Experience</strong></h3>
         <label for="Experience_main_1">1. </label>
-        <input type="text" id="Experience_main_1" name="Experience_main_1">
+        <input type="text" id="Experience_main_1" name="Experience_main_1" value="{{Experience_main_1}}">
         <br><br>
         
         <label for="Experience_details_1">Details: </label><br>
-        <textarea type="text" class="Experience_details_1" name="Experience_details_1" oninput="resizeTextarea()"></textarea>
+        <textarea type="text" class="Experience_details_1" name="Experience_details_1" oninput="resizeTextarea()"> {{Experience_details_1}}</textarea>
         <script src="script.js"></script>
         <br><br>
 
         <label for="Experience_main_2">2. </label>
-        <input type="text" id="Experience_main_2" name="Experience_main_2">
+        <input type="text" id="Experience_main_2" name="Experience_main_2" value="{{Experience_main_2}}">
         <br><br>
         
         <label for="Experience_details_2">Details: </label><br>
-        <textarea type="text" class="Experience_details_2" name="Experience_details_2" oninput="resizeTextarea()"></textarea>
+        <textarea type="text" class="Experience_details_2" name="Experience_details_2" oninput="resizeTextarea()">{{Experience_details_2}}</textarea>
         <script src="script.js"></script>
         <br><br>
 
         <label for="Experience_main_3">3. </label>
-        <input type="text" id="Experience_main_3" name="Experience_main_3">
+        <input type="text" id="Experience_main_3" name="Experience_main_3" value="{{Experience_main_3}}">
         <br><br>
         
         <label for="Experience_details_3">Details: </label><br>
-        <textarea type="text" class="Experience_details_3" name="Experience_details_3" oninput="resizeTextarea()"></textarea>
+        <textarea type="text" class="Experience_details_3" name="Experience_details_3" oninput="resizeTextarea()"> {{Experience_details_3}}</textarea>
         <script src="script.js"></script>
 
         <br><br>

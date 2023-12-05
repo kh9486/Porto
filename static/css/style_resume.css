@@ -18,6 +18,12 @@ body{
     right: 60px;
     top: 49px;
 }
+.top-bar_resume img.logout {
+    width: 30px;
+    height: 30px;
+    right: 60px;
+    top: 49px;
+}
 .top-bar_resume img.porto_logo_small {
     position: fixed;
     width: 200px;

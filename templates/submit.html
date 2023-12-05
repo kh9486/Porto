@@ -12,10 +12,14 @@
         </a>
 
         <img id="menu-button" src={{ url_for('static', filename='img/fi-br-menu-dots.png') }} alt="" onclick="toggleMenu()">
-
-        <a href={{ url_for('login') }}>
-            <img class="login_resume" src={{ url_for('static', filename='img/account_circle.png') }} alt="">
+        <a href= "{% if 'username' in session %}{{ url_for('logout') }}{% else %}{{ url_for('login') }}{% endif %}">
+            {% if 'username' in session %}
+                <img class="logout" src={{ url_for('static', filename='img/logout.png') }} alt="">
+            {% else %}
+                <img class="login" src={{ url_for('static', filename='img/account_circle.png') }} alt="">
+            {% endif %}
         </a>
+        
 
     </header>
 
@@ -26,8 +30,10 @@
         </ul>
         <ul>
             <li id="Menu1">
-                <img id="Menu1-img" src = {{ url_for('static', filename='img/User_Shield.png') }} alt="">
-                <h1 id="Menu1-text">내 정보</h1>
+                <a href="{{ url_for('resume') }}">
+                    <img id="Menu1-img" src="{{ url_for('static', filename='img/User_Shield.png') }}" alt="">
+                    <h1 id="Menu1-text">내 정보</h1>
+                </a>
             </li>
             <li id="Menu2">
                 <img id="Menu2-img" src = {{ url_for('static', filename='img/document.png') }} alt="">
