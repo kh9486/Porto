@@ -247,6 +247,13 @@ def submit():
     )
 
 
+@app.route('/result')
+def result():
+    if not is_user_logged_in():
+        return redirect(url_for('login'))
+    else:
+        return render_template('result.html')
+
 
 if __name__ == '__main__':
     app.run(debug="True")

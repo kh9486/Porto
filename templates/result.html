@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href={{ url_for('static', filename='css/style_index.css') }}>
-    <title>Porto</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style_result.css') }}>
+    <title>result</title>
 </head>
 <body>
-    <div class="top-bar">
+    <header class="top-bar_resume">
+        <a href={{ url_for('index') }}>
+            <img class="porto_logo_small" src={{ url_for('static', filename='img/porto_logo_small.png') }} alt="">
+        </a>
+
         <img id="menu-button" src={{ url_for('static', filename='img/fi-br-menu-dots.png') }} alt="" onclick="toggleMenu()">
         <a href= "{% if 'username' in session %}{{ url_for('logout') }}{% else %}{{ url_for('login') }}{% endif %}">
             {% if 'username' in session %}
@@ -15,9 +19,7 @@
                 <img class="login" src={{ url_for('static', filename='img/account_circle.png') }} alt="">
             {% endif %}
         </a>
-
-
-    </div>
+    </header>
 
     <div id="menu">
         <ul id="Menu-top">
@@ -31,9 +33,8 @@
                     <h1 id="Menu1-text">내 정보</h1>
                 </a>
             </li>
-            </li>
             <li id="Menu2">
-                <a href = "{{ url_for('result')}}">
+                <a href="{{ url_for('result') }}">
                     <img id="Menu2-img" src = {{ url_for('static', filename='img/document.png') }} alt="">
                     <h1 id="Menu2-text">내 이력서</h1>
                 </a>
@@ -45,19 +46,8 @@
         </ul>
     </div>
 
-    <div class="title">
-        <img class="main-logo" src={{ url_for('static', filename='img/porto_logo_big.png') }} alt="">
+    <div class="template-wrapper">
+        <img class="template" src={{ url_for('static', filename='img/template.png') }} alt="">
     </div>
-
-    <div class="main-content">
-        <div class="main-content-right">
-            <img src={{ url_for('static', filename='img/portfolio_1.png') }} alt="">
-        </div>
-        <div class="main-content-left">
-            <img src={{ url_for('static', filename='img/main_text.png') }} alt="">
-        </div>
-    </div>
-
-<script src={{ url_for('static', filename='js/script.js') }}></script>
 </body>
 </html>

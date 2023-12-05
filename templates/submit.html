@@ -36,8 +36,10 @@
                 </a>
             </li>
             <li id="Menu2">
-                <img id="Menu2-img" src = {{ url_for('static', filename='img/document.png') }} alt="">
-                <h1 id="Menu2-text">내 이력서</h1>
+                <a href="{{ url_for('result') }}">
+                    <img id="Menu2-img" src = {{ url_for('static', filename='img/document.png') }} alt="">
+                    <h1 id="Menu2-text">내 이력서</h1>
+                </a>
             </li>
             <li id="Menu3">
                 <img id="Menu3-img" src = {{ url_for('static', filename='img/question_person.png') }} alt="">

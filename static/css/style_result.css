@@ -1,0 +1,149 @@
+body{
+    background-color: #f2f2f2;
+}
+.top-bar_resume {
+    width: 120%;
+    height: 100px;
+    /* background-color: #5B5C62; */
+}
+.top-bar_resume img {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    float: right;
+}
+.top-bar_resume img.login_resume {
+    width: 30px;
+    height: 30px;
+    right: 60px;
+    top: 49px;
+}
+.top-bar_resume img.logout {
+    width: 30px;
+    height: 30px;
+    right: 60px;
+    top: 49px;
+}
+.top-bar_resume img.porto_logo_small {
+    position: fixed;
+    width: 200px;
+    height: auto;
+    left: 40px;
+    top: 40px;
+}
+
+@media (max-width: 1000px) {
+  .top-bar img {
+    display: none;
+  }
+}
+section {
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    left: 50%;
+    background-color: #f2f2f2;
+}
+.mainContent {
+    margin: auto;
+    display: block; /* 블록 수준 요소로 설정 */
+}
+
+.Experience_details {
+    resize: vertical; /* 수직 크기 조절 허용 */
+    width: 300px; /* 기본 너비 */
+    height: 100px; /* 기본 높이 */
+}
+
+#menu {
+    position: fixed;
+    border-radius: 30px 0 0 10px / 30px 0 0 10px;
+    top: 105px;
+    width: 250px;
+    height: 100%;
+    right: 0; /* 이게 중요 */
+    background-color: #73757a;
+    overflow-x: hidden;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    z-index: 1000;
+}
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+#Menu-top {
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+#menu li {
+    padding: 15px;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+}
+#Menu {
+    float: left;
+    margin-left: 30px;
+}
+#Menu-text {
+    margin-top: -7px;
+    margin-right: 90px;
+    color: white;
+    font-size: 30px;
+    float: right;
+}
+#menu-button {
+    cursor: pointer;
+}
+#Menu1{
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+#Menu1-img {
+    float: left;
+    margin-left: 10px;
+}
+#Menu1-text {
+    margin-top: 1px;
+    margin-right: 90px;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+#Menu2{
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+#Menu2-img {
+    float: left;
+    margin-left: 5px;
+}
+#Menu2-text {
+    margin-top: 1px;
+    margin-right: 70px;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+#Menu3{
+    margin-top: 500px;
+}
+#Menu3-img {
+    float: left;
+    margin-left: 16px;
+}
+#Menu3-text {
+    margin-top: 3px;
+    margin-right: 117px;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+
+.template {
+    max-width: 100%;
+    max-height: 100%;        
+    width:50%;
+    height: 50%;
+    margin-left: 26%;
+}
